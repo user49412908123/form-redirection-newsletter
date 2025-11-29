@@ -1,0 +1,250 @@
+:root {
+  --bg: #faf9f6;
+  --primary: #ff6b35;
+  --primary-dark: #e85d24;
+  --text: #333333; /* slightly darker for better readability */
+  --muted: rgba(51, 51, 51, 0.68);
+  --card-bg: #ffffff;
+  --radius: 12px;
+  --max-width: 900px;
+  --gap: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 56px 20px; /* slightly more breathing room */
+  animation: fadeIn 0.42s ease both;
+}
+
+/* Page container */
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  margin-bottom: 56px; /* increased space so logo doesn't crowd the title */
+}
+.logo {
+  max-width: 110px !important; /* make visibly smaller */
+  width: auto;
+  height: auto;
+  display: inline-block;
+}
+
+/* Card base */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 36px; /* slightly larger for premium feel */
+  box-shadow: 0 10px 30px rgba(29, 29, 29, 0.06);
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Confirmation */
+.confirmation {
+  position: relative;
+  text-align: center;
+  padding-top: 84px; /* bigger hero space */
+  padding-bottom: 84px;
+}
+.confirmation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+.icon-wrap {
+  margin: 0 auto 28px;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 107, 53, 0.08);
+}
+.title {
+  font-size: 34px; /* bold hero */
+  margin: 16px 0 18px;
+  color: #171717; /* more contrast */
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+.subtitle {
+  margin: 0 0 16px;
+  color: #2c2c2c;
+  font-size: 18px;
+}
+.explain {
+  margin: 0 auto;
+  color: #3a3a3a;
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 760px;
+}
+
+/* Actions */
+.actions {
+  padding: 24px;
+}
+.section-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.section-desc {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Buttons row */
+.btn-row {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 22px; /* more space above CTAs */
+}
+
+/* Button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px; /* balanced padding for equal look */
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 0.14s ease, box-shadow 0.14s ease,
+    background-color 0.14s ease;
+  min-width: 200px; /* equalized button widths */
+  justify-content: center;
+  box-shadow: none;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Primary button (Facebook) */
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(248, 111, 80, 0.12);
+}
+
+/* (removed .btn-cta to keep parity between buttons) */
+
+/* Outline (Google reviews) */
+.btn-outline {
+  background: #fff;
+  color: var(--primary);
+  border: 1.6px solid var(--primary);
+}
+.btn-outline:hover,
+.btn-outline:focus {
+  background: rgba(255, 107, 53, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Ghost/secondary (site) */
+.btn-outline-ghost {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.btn-outline-ghost:hover,
+.btn-outline-ghost:focus {
+  background: rgba(255, 107, 53, 0.04);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* focus visible for accessibility */
+.btn:focus-visible {
+  outline: 3px solid rgba(255, 107, 53, 0.12);
+  outline-offset: 3px;
+}
+
+/* Icon styling */
+.icon {
+  display: inline-block;
+  color: inherit;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  body {
+    padding: 28px 16px;
+    align-items: flex-start;
+  }
+  .card {
+    padding: 18px;
+  }
+  .btn-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    width: 100%;
+    min-width: 0;
+  }
+  .title {
+    font-size: 18px;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
